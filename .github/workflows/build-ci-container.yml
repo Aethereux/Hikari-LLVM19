@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout LLVM
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5.0.0
         with:
           sparse-checkout: .github/workflows/containers/github-action-ci/
       - name: Change podman Root Direcotry
@@ -65,7 +65,7 @@ jobs:
           echo "container-name-tag=$container_name:$tag" >> $GITHUB_OUTPUT
 
       - name: Checkout LLVM
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5.0.0
         with:
           sparse-checkout: .github/workflows/containers/github-action-ci/
 
@@ -81,7 +81,7 @@ jobs:
         # $GITHUB_WORKSPACE to avoid space limitations on the default drive
         # and use the permissions setup for /mnt/podman.
       - name: Download stage1-toolchain
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: stage1-toolchain
           path: /mnt/podman
